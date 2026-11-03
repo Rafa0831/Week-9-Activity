@@ -1,0 +1,61 @@
+// PC16 - Week 9: Object-Oriented Programming in Dart
+// Name: Rafael S. Ebrada
+// Section: BSIT 2.1
+
+
+class Vehicle {
+  String _brand;
+  String model;
+  int year;
+
+ 
+  Vehicle(this._brand, this.model, this.year);
+
+ 
+  String get brand => _brand;
+
+  set brand(String newBrand) {
+    _brand = newBrand;
+  }
+
+ 
+  void showDetails() {
+    print("Brand: $_brand");
+    print("Model: $model");
+    print("Year: $year");
+    print("----------------------");
+  }
+
+  void startEngine() {
+    print("$_brand $model engine is starting...");
+  }
+}
+
+
+void main() {
+  print("==============================");
+  print("    VEHICLE MANAGEMENT SYSTEM");
+  print("==============================\n");
+
+ 
+  List<Vehicle> vehicles = [
+    Vehicle("Toyota", "Vios", 2024),
+    Vehicle("Honda", "Click 125", 2023),
+  ];
+
+
+  for (Vehicle vehicle in vehicles) {
+    vehicle.showDetails();
+    vehicle.startEngine();
+    print("");
+  }
+
+
+  print("===== UPDATE VEHICLE BRAND =====");
+
+  vehicles[0].brand = "Mitsubishi";
+
+  print("Updated Brand: ${vehicles[0].brand}");
+
+  print("\nProgram finished successfully!");
+}
